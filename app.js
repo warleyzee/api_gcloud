@@ -1,5 +1,6 @@
 import express from 'express';
-import uploadRoutes from './src/routes/listPdfRoutes';
+import testConectionRoutes from './src/routes/testConectionRoute.js';
+import listPdfRoutes from './src/routes/listPdfRoutes.js';
 
 class App {
   constructor() {
@@ -15,7 +16,8 @@ class App {
   }
 
   routes(){
-     this.app.use('/listpdf', uploadRoutes);
+    this.app.use('/listpdf', listPdfRoutes);
+    this.app.use('/', testConectionRoutes);
   }
 }
 

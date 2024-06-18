@@ -1,32 +1,11 @@
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class ListPdfController {
-
-  //   const storage = multer.diskStorage({
-  //   destination: (req, file, cb) => {
-  //     const uploadPath = path.join(__dirname, '../../uploads');
-  //     // Cria a pasta de upload se não existir
-  //     if (!fs.existsSync(uploadPath)) {
-  //       fs.mkdirSync(uploadPath);
-  //     }
-  //     cb(null, 'uploads/');
-  //   },
-  //   filename: (req, file, cb) => {
-  //     cb(null, `${file.originalname}`);
-  //   },
-  // });
-
-  // const upload = multer({ storage: storage });
-
-  // const uploadFile = (req, res) => {
-  //   if (req.file) {
-  //     res.json({ message: 'Upload bem-sucedido', file: req.file });
-  //   } else {
-  //     res.status(400).json({ message: 'Nenhum arquivo enviado' });
-  //   }
-  // };
 
   listPdfs = (req, res) => {
     const directoryPath = path.join(__dirname, '../../uploads');
