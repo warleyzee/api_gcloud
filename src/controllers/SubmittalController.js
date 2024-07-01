@@ -111,15 +111,20 @@ class SubmittalController {
   };
 
   addComment = (req, res) => {
-    const { text } = req.body;
-    const author = 'Warley Souza';
-    const date = formatDate(new Date());
-    const newComment = submittalModel.addCommentToSubmittal(req.params.id, { text, date, author });
-    if (newComment) {
-        res.status(201).json(newComment);
-    } else {
-        res.status(404).json({ message: 'Submittal not Found' });
+    const submittalId = req.params.id;
+    const { text, author, date } = req.body;
+  
+    const submittal = submittalModel.getSubmittalById(submittalId);
+    if (!submittal) {
+        return res.status(404).json({ message: 'Submittal not found' });
     }
+  
+    const newComment = { id: Date.now(), text, author, date };
+    submittal.comments = submittal.comments || [];
+    submittal.comments.push(newComment);
+  
+    const updatedSubmittal = submittalModel.updateSubmittal(submittalId, submittal);
+    res.status(201).json(newComment);
   };
 }
 
