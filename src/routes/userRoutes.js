@@ -1,9 +1,16 @@
 // routes/userRoutes.js
-const express = require('express');
-const router = express.Router();
-const userController = require('../controllers/userController');
+import { Router } from 'express';
+import userController from '../controllers/UserController.js';
 
-// Rota para criar um novo usuário
-router.post('/create', userController.createUser);
+const router = Router();
 
-module.exports = router;
+// Rota para usuário
+router.get('/', userController.getAllUsers);
+router.get('/:id', userController.getUserlById);
+router.post('/', userController.createUser);
+router.put('/:id', userController.updateUser);
+router.delete('/:id', userController.deleteUser);
+
+export default router;
+
+// ..-. .- -- .. .-.. .. .-
