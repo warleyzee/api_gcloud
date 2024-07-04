@@ -285,7 +285,7 @@ let submittals = [
   }
 ]
 
-let id = 20;
+let id = 16;
 
 export const getAllSubmittals = ({ start = 0, end = submittals.length, sort = 'id', order = 'ASC' }) => {
   const sortedSubmittals = [...submittals].sort((a, b) => {
