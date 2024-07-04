@@ -8,7 +8,62 @@ let companys = [
     "eircode": "D04 YX05",
     "email": "john.doe@company.com",
     "phone": "015313693"
-  }];
+  },{
+    "id":2,
+    "name": "JFA - John Fleming Architects",
+    "address": "APT 1 - GRAND CANAL WHARF",
+    "address1": "SOUTH DOCK ROAD",
+    "address2": "DUBLIN 4",
+    "eircode": "D04 YX05",
+    "email": "john.doe@company.com",
+    "phone": "015313693"
+  },
+  {
+    "id":3,
+    "name": "JH - Jensen Hughes",
+    "address": "APT 1 - GRAND CANAL WHARF",
+    "address1": "SOUTH DOCK ROAD",
+    "address2": "DUBLIN 4",
+    "eircode": "D04 YX05",
+    "email": "john.doe@company.com",
+    "phone": "015313693"
+  },
+  {
+    "id":4,
+    "name": "OHAC - O’Herlihy Access Consultancy",
+    "address": "APT 1 - GRAND CANAL WHARF",
+    "address1": "SOUTH DOCK ROAD",
+    "address2": "DUBLIN 4",
+    "eircode": "D04 YX05",
+    "email": "john.doe@company.com",
+    "phone": "015313693"
+  },
+  {
+    "id":5,
+    "name": "PH - Park Hood",
+    "address": "APT 1 - GRAND CANAL WHARF",
+    "address1": "SOUTH DOCK ROAD",
+    "address2": "DUBLIN 4",
+    "eircode": "D04 YX05",
+    "email": "john.doe@company.com",
+    "phone": "015313693"
+  },
+  {
+    "id":6,
+    "name": "Glenbrier ",
+    "address": "APT 1 - GRAND CANAL WHARF",
+    "address1": "SOUTH DOCK ROAD",
+    "address2": "DUBLIN 4",
+    "eircode": "D04 YX05",
+    "email": "john.doe@company.com",
+    "phone": "015313693"
+  },
+  
+
+  
+  
+
+];
 let id = 1;
 
 export const getAllCompanys = ({ start = 0, end = companys.length, sort = 'id', order = 'ASC' }) => {

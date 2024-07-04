@@ -13,6 +13,7 @@ const storage = multer.diskStorage({
   }
 });
 
+// const upload = multer({ storage: storage });
 const upload = multer({ storage: storage });
 
 const formatDate = (date) => {
@@ -64,7 +65,7 @@ class SubmittalController {
       dateSubmitted,
       rev,
       status,
-      issuedTo,
+      issuedTo: Array.isArray(issuedTo) ? issuedTo : [issuedTo],
       accepted,
       file,
       comments:[]
@@ -83,7 +84,7 @@ class SubmittalController {
       dateSubmitted,
       rev,
       status,
-      issuedTo,
+      issuedTo: Array.isArray(issuedTo) ? issuedTo : [issuedTo],
       accepted,
       file
     });
