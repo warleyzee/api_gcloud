@@ -3,11 +3,12 @@ let users = [
     "id": 1,
     "name": "John",
     "surname": "Doe",
-    "email": "john.doe@example.com",
+    "email": "test.souza@example.com",
     "role": "admin",
     "jobTitle": "Manager",
     "phone": "123-456-7890",
-    "company": "EDC - Engineering Design Consultants"
+    "company": "EDC - Engineering Design Consultants",
+    "password": "password123"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@ let users = [
     "role": "editor",
     "jobTitle": "Senior Editor",
     "phone": "234-567-8901",
-    "company": "JFA - John Fleming Architects"
+    "company": "JFA - John Fleming Architects",
+    "password": "password123"
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@ let users = [
     "role": "viewer",
     "jobTitle": "Sales Representative",
     "phone": "345-678-9012",
-    "company": "JH - Jensen Hughes"
+    "company": "JH - Jensen Hughes",
+    "password": "password123"
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@ let users = [
     "role": "admin",
     "jobTitle": "IT Specialist",
     "phone": "456-789-0123",
-    "company": "OHAC - O’Herlihy Access Consultancy"
+    "company": "OHAC - O’Herlihy Access Consultancy",
+    "password": "password123"
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@ let users = [
     "role": "editor",
     "jobTitle": "Content Creator",
     "phone": "567-890-1234",
-    "company": "PH - Park Hood"
+    "company": "PH - Park Hood",
+    "password": "password123"
   },
   {
     "id": 6,
@@ -57,11 +62,25 @@ let users = [
     "role": "viewer",
     "jobTitle": "Marketing Specialist",
     "phone": "678-901-2345",
-    "company": "PH - Park Hood"
+    "company": "PH - Park Hood",
+    "password": "password123"
+  },
+  {
+    "id": 7,
+    "name": "Warley",
+    "surname": "Souza",
+    "email": "warley.souza@example.com",
+    "role": "Admin",
+    "jobTitle": "Marketing Specialist",
+    "phone": "678-901-2345",
+    "company": "Glenbrier",
+    "password": "password123"
   }
 ]
 
 let id = 1;
+
+export const getUserByEmail = (email) => users.find(user => user.email === email);
 
 export const getAllUsers = ({ start = 0, end = users.length, sort = 'id', order = 'ASC' }) => {
   const sortedUsers = [...users].sort((a, b) => {

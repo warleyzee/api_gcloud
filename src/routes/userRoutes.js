@@ -5,6 +5,7 @@ import userController from '../controllers/UserController.js';
 const router = Router();
 
 // Rota para usuário
+router.post('/login', userController.login);
 router.get('/', userController.getAllUsers);
 router.get('/:id', userController.getUserlById);
 router.post('/', userController.createUser);

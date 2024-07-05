@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 import * as userModel from '../models/userModel.js';
 
 class UserController {
@@ -28,7 +29,7 @@ class UserController {
   };
 
   createUser = (req, res) => {
-    const { name, surname, email, role, jobTitle, phone, company } = req.body;
+    const { name, surname, email, role, jobTitle, phone, company,password } = req.body;
 
     const newUser = userModel.createUser({
     name,
@@ -37,14 +38,15 @@ class UserController {
     role,
     jobTitle,
     phone,
-    company
+    company,
+    password
     });
 
     res.status(201).json(newUser);
   };
 
   updateUser = (req, res) => {
-    const { name, surname, email, role, jobTitle, phone, company } = req.body;
+    const { name, surname, email, role, jobTitle, phone, company,password } = req.body;
 
     const updatedUser = userModel.updateUser(req.params.id, {
       name,
@@ -53,7 +55,8 @@ class UserController {
       role,
       jobTitle,
       phone,
-      company
+      company,
+      password
     });
 
     if (updatedUser) {
@@ -78,5 +81,15 @@ class UserController {
     }
   };
 
+  login = (req, res) => {
+    const { username, password } = req.body;
+    const user = userModel.getUserByEmail(username);
+    if (user && user.password === password) {
+      const token = jwt.sign({ id: user.id, role: user.role }, 'your_jwt_secret');
+      return res.json({ token, user });
+    }
+    return res.status(401).json({ message: 'Invalid username or password' });
+  };
 }
+
 export default new UserController();
