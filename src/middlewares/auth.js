@@ -1,16 +1,19 @@
-// middleware/auth.js
+import jwt from 'jsonwebtoken';
 
-export const authorize = (roles = []) => {
-  if (typeof roles === 'string') {
-      roles = [roles];
+const authMiddleware = (req, res, next) => {
+  const token = req.header('Authorization')?.replace('Bearer ', '');
+
+  if (!token) {
+    return res.status(401).json({ message: 'Auth token is missing' });
   }
 
-  return (req, res, next) => {
-      const userRole = req.headers['user-role']; // Role should be passed in headers
-      if (!roles.length || roles.includes(userRole)) {
-          return next();
-      } else {
-          return res.status(403).json({ message: 'Forbidden' });
-      }
-  };
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded; // Adiciona as informações do usuário ao objeto req
+    next();
+  } catch (error) {
+    res.status(401).json({ message: 'Invalid auth token' });
+  }
 };
+
+export default authMiddleware;

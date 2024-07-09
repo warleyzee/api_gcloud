@@ -6,7 +6,7 @@ let submittals = [
     "dateSubmitted": "2024-06-01",
     "rev": "A",
     "status": "Pending",
-    "issuedTo": ["John Doe", "Jane Smith", "Alice Davis"],
+    "issuedTo": ["JFA - John Fleming Architects", "JH - Jensen Hughes"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -25,7 +25,7 @@ let submittals = [
     "dateSubmitted": "2024-06-02",
     "rev": "B",
     "status": "Approved",
-    "issuedTo": ["Jane Smith", "John Doe", "Bob Johnson"],
+    "issuedTo": ["PH - Park Hood"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -44,7 +44,7 @@ let submittals = [
     "dateSubmitted": "2024-06-03",
     "rev": "C",
     "status": "Revision",
-    "issuedTo": ["Bob Johnson", "Charlie Brown", "Eve Martinez"],
+    "issuedTo": ["JFA - John Fleming Architects", "JH - Jensen Hughes"],
     "accepted": "No",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -63,7 +63,7 @@ let submittals = [
     "dateSubmitted": "2024-06-04",
     "rev": "D",
     "status": "Pending",
-    "issuedTo": ["Alice Davis", "George Wilson", "Sophia Lee"],
+    "issuedTo":  ["OHAC - O’Herlihy Access Consultancy"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -82,7 +82,7 @@ let submittals = [
     "dateSubmitted": "2024-06-05",
     "rev": "E",
     "status": "Approved",
-    "issuedTo": ["Charlie Brown", "David Anderson", "Emily Brown"],
+    "issuedTo": ["JFA - John Fleming Architects", "PH - Park Hood"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -101,7 +101,7 @@ let submittals = [
     "dateSubmitted": "2024-06-06",
     "rev": "F",
     "status": "Revision",
-    "issuedTo": ["Eve Martinez", "John Doe", "Jane Smith"],
+    "issuedTo":  ["JH - Jensen Hughes", "OHAC - O’Herlihy Access Consultancy"],
     "accepted": "No",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -120,7 +120,7 @@ let submittals = [
     "dateSubmitted": "2024-06-07",
     "rev": "G",
     "status": "Pending",
-    "issuedTo": ["George Wilson", "Michael Johnson", "Anna Williams"],
+    "issuedTo": ["EDC - Engineering Design Consultants", "JH - Jensen Hughes", "PH - Park Hood"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -139,7 +139,7 @@ let submittals = [
     "dateSubmitted": "2024-06-08",
     "rev": "H",
     "status": "Approved",
-    "issuedTo": ["Sophia Lee", "David Anderson", "George Wilson"],
+    "issuedTo": ["JFA - John Fleming Architects"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -158,7 +158,7 @@ let submittals = [
     "dateSubmitted": "2024-06-09",
     "rev": "I",
     "status": "Revision",
-    "issuedTo": ["Lucas White", "Sophia Lee", "George Wilson"],
+    "issuedTo": ["EDC - Engineering Design Consultants", "OHAC - O’Herlihy Access Consultancy"],
     "accepted": "No",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -177,7 +177,7 @@ let submittals = [
     "dateSubmitted": "2024-06-10",
     "rev": "J",
     "status": "Pending",
-    "issuedTo": ["Emily Brown", "Michael Johnson", "Chris Moore"],
+    "issuedTo": ["PH - Park Hood", "JH - Jensen Hughes"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -196,7 +196,7 @@ let submittals = [
     "dateSubmitted": "2024-06-11",
     "rev": "K",
     "status": "Approved",
-    "issuedTo": ["Michael Johnson", "Lucas White", "David Anderson"],
+    "issuedTo": ["JH - Jensen Hughes"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -215,7 +215,7 @@ let submittals = [
     "dateSubmitted": "2024-06-12",
     "rev": "L",
     "status": "Revision",
-    "issuedTo": ["Anna Williams", "Sophia Lee", "George Wilson"],
+    "issuedTo": ["JH - Jensen Hughes"],
     "accepted": "No",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -234,7 +234,7 @@ let submittals = [
     "dateSubmitted": "2024-06-13",
     "rev": "M",
     "status": "Pending",
-    "issuedTo": ["David Anderson", "Anna Williams", "George Wilson"],
+    "issuedTo": ["EDC - Engineering Design Consultants", "JH - Jensen Hughes"],
     "accepted": "Yes",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
@@ -253,7 +253,7 @@ let submittals = [
     "dateSubmitted": "2024-06-14",
     "rev": "N",
     "status": "Approved",
-    "issuedTo": ["Chris Moore", "Anna Williams", "David Anderson"],
+    "issuedTo":  ["PH - Park Hood", "OHAC - O’Herlihy Access Consultancy"],
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
       {
@@ -271,12 +271,31 @@ let submittals = [
     "dateSubmitted": "2024-06-15",
     "rev": "O",
     "status": "Revision",
-    "issuedTo": ["Maria Taylor", "Michael Johnson", "George Wilson"],
+    "issuedTo": ["JFA - John Fleming Architects", "EDC - Engineering Design Consultants", "PH - Park Hood"],
     "accepted": "No",
     "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
     "comments": [
       {
         "id": 15,
+        "text": "Needs major revisions",
+        "date": "2023-06-16",
+        "author": "Roberto Alves"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "description": "Fifteenth project draft",
+    "location": "San Jose",
+    "dateSubmitted": "2024-06-18",
+    "rev": "A",
+    "status": "Revision",
+    "issuedTo": ["JFA - John Fleming Architects", "EDC - Engineering Design Consultants", "PH - Park Hood"],
+    "accepted": "No",
+    "file": ["example2.pdf", "example1.pdf","example1.pdf" ],
+    "comments": [
+      {
+        "id": 16,
         "text": "Needs major revisions",
         "date": "2023-06-16",
         "author": "Roberto Alves"

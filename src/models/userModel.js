@@ -75,6 +75,17 @@ let users = [
     "phone": "678-901-2345",
     "company": "Glenbrier",
     "password": "password123"
+  },
+  {
+    "id": 8,
+    "name": "Diele",
+    "surname": "Souza",
+    "email": "diele.souza@example.com",
+    "role": "Admin",
+    "jobTitle": "Marketing Specialist",
+    "phone": "678-901-2345",
+    "company": "Glenbrier",
+    "password": "password123"
   }
 ]
 
@@ -95,8 +106,8 @@ export const getUserById = (userId) => users.find(sub => sub.id === Number(userI
 
 
 
-export const createUser = ({ name, surname, email, role, jobTitle, phone, company}) => {
-  const newUser = { id: ++id, name, surname, email, role, jobTitle, phone, company};
+export const createUser = ({ name, surname, email, role, jobTitle, phone, company, password}) => {
+  const newUser = { id: ++id, name, surname, email, role, jobTitle, phone, company, password};
   users.push(newUser);
   return newUser;
 };

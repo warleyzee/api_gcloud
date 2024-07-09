@@ -57,7 +57,7 @@ class SubmittalController {
 
   createSubmittal = (req, res) => {
     const { description, location, dateSubmitted, rev, status, issuedTo, accepted } = req.body;
-    const file = req.file ? req.file.filename : null;
+    const files = req.files ? req.files.map(file => file.originalname) : [];
 
     const newSubmittal = submittalModel.createSubmittal({
       description,
@@ -67,7 +67,7 @@ class SubmittalController {
       status,
       issuedTo: Array.isArray(issuedTo) ? issuedTo : [issuedTo],
       accepted,
-      file,
+      files,
       comments:[]
     });
 
@@ -76,7 +76,7 @@ class SubmittalController {
 
   updateSubmittal = (req, res) => {
     const { description, location, dateSubmitted, rev, status, issuedTo, accepted } = req.body;
-    const file = req.file ? req.file.filename : null;
+    const files = req.files ? req.files.map(file => file.originalname) : [];
 
     const updatedSubmittal = submittalModel.updateSubmittal(req.params.id, {
       description,
@@ -86,7 +86,7 @@ class SubmittalController {
       status,
       issuedTo: Array.isArray(issuedTo) ? issuedTo : [issuedTo],
       accepted,
-      file
+      files
     });
 
     if (updatedSubmittal) {

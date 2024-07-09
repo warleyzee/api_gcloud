@@ -1,7 +1,10 @@
 import { Router } from 'express';
 import submittalController, { upload } from '../controllers/submittalController.js';
+// import auth from '../middlewares/auth.js';
 
 const router = Router();
+
+// router.use(authMiddleware);
 
 router.get('/', submittalController.getAllSubmittals);
 router.get('/:id', submittalController.getSubmittalById);

@@ -29,7 +29,7 @@ class UserController {
   };
 
   createUser = (req, res) => {
-    const { name, surname, email, role, jobTitle, phone, company,password } = req.body;
+    const { name, surname, email, role, jobTitle, phone, company, password } = req.body;
 
     const newUser = userModel.createUser({
     name,
@@ -46,7 +46,7 @@ class UserController {
   };
 
   updateUser = (req, res) => {
-    const { name, surname, email, role, jobTitle, phone, company,password } = req.body;
+    const { name, surname, email, role, jobTitle, phone, company, password } = req.body;
 
     const updatedUser = userModel.updateUser(req.params.id, {
       name,

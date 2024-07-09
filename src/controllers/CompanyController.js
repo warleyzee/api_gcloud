@@ -28,10 +28,11 @@ class CompanyController {
   };
 
   createCompany = (req, res) => {
-    const { name, address, address1, address2, eircode, email,  phone } = req.body;
+    const { name, acronym, address, address1, address2, eircode, email,  phone } = req.body;
 
     const newCompany = companyModel.createCompany({
       name,
+      acronym,
       address,
       address1,
       address2,
@@ -44,10 +45,11 @@ class CompanyController {
   };
 
   updateCompany = (req, res) => {
-    const { name, address, address1, address2, eircode, email,  phone } = req.body;
+    const { name, acronym, address, address1, address2, eircode, email,  phone } = req.body;
 
     const updatedCompany = companyModel.updateCompany(req.params.id, {
       name,
+      acronym,
       address,
       address1,
       address2,

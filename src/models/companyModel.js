@@ -2,6 +2,7 @@ let companys = [
   {
     "id":1,
     "name": "EDC - Engineering Design Consultants",
+    "acronym": "EDC",
     "address": "APT 1 - GRAND CANAL WHARF",
     "address1": "SOUTH DOCK ROAD",
     "address2": "DUBLIN 4",
@@ -11,6 +12,7 @@ let companys = [
   },{
     "id":2,
     "name": "JFA - John Fleming Architects",
+    "acronym": "JFA",
     "address": "APT 1 - GRAND CANAL WHARF",
     "address1": "SOUTH DOCK ROAD",
     "address2": "DUBLIN 4",
@@ -21,6 +23,7 @@ let companys = [
   {
     "id":3,
     "name": "JH - Jensen Hughes",
+    "acronym": "JH",
     "address": "APT 1 - GRAND CANAL WHARF",
     "address1": "SOUTH DOCK ROAD",
     "address2": "DUBLIN 4",
@@ -31,6 +34,7 @@ let companys = [
   {
     "id":4,
     "name": "OHAC - O’Herlihy Access Consultancy",
+    "acronym": "OHAC",
     "address": "APT 1 - GRAND CANAL WHARF",
     "address1": "SOUTH DOCK ROAD",
     "address2": "DUBLIN 4",
@@ -41,6 +45,7 @@ let companys = [
   {
     "id":5,
     "name": "PH - Park Hood",
+    "acronym": "PH",
     "address": "APT 1 - GRAND CANAL WHARF",
     "address1": "SOUTH DOCK ROAD",
     "address2": "DUBLIN 4",
@@ -51,6 +56,7 @@ let companys = [
   {
     "id":6,
     "name": "Glenbrier ",
+    "acronym": "GB",
     "address": "APT 1 - GRAND CANAL WHARF",
     "address1": "SOUTH DOCK ROAD",
     "address2": "DUBLIN 4",
@@ -79,8 +85,8 @@ export const getCompanyById = (companyId) => companys.find(sub => sub.id === Num
 
 
 
-export const createCompany = ({ name, surname, email, role, jobTitle, phone, company}) => {
-  const newCompany = { id: ++id, name, surname, email, role, jobTitle, phone, company};
+export const createCompany = ({ name, acronym, address, address1, address2, eircode, email,  phone}) => {
+  const newCompany = { id: ++id, name, acronym, address, address1, address2, eircode, email,  phone};
   companys.push(newCompany);
   return newCompany;
 };
