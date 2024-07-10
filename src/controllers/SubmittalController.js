@@ -8,12 +8,11 @@ const storage = multer.diskStorage({
     cb(null, 'uploads/');
   },
   filename: function(req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, uniqueSuffix + path.extname(file.originalname));
+    // Mantém o nome original do arquivo
+    cb(null, file.originalname);
   }
 });
 
-// const upload = multer({ storage: storage });
 const upload = multer({ storage: storage });
 
 const formatDate = (date) => {
@@ -29,6 +28,31 @@ const formatDate = (date) => {
 };
 
 class SubmittalController {
+
+  createSubmittal = (req, res) => {
+    console.log('Received body:', req.body); // Log the body
+    console.log('Received file:', req.file); // Log the file
+
+    const { description, location, dateSubmitted, rev, status, issuedTo, accepted } = req.body;
+
+    // Process the file
+    const file = req.file ? req.file.filename : null;
+
+    const newSubmittal = submittalModel.createSubmittal({
+      description,
+      location,
+      dateSubmitted,
+      rev,
+      status,
+      issuedTo: Array.isArray(issuedTo) ? issuedTo : [issuedTo],
+      accepted,
+      file, // Single file
+      comments: []
+    });
+
+    res.status(201).json(newSubmittal);
+  };
+
 
   getAllSubmittals = (req, res) => {
     const { _start, _end, _sort, _order } = req.query;
@@ -55,24 +79,24 @@ class SubmittalController {
     }
   };
 
-  createSubmittal = (req, res) => {
-    const { description, location, dateSubmitted, rev, status, issuedTo, accepted } = req.body;
-    const files = req.files ? req.files.map(file => file.originalname) : [];
+  // createSubmittal = (req, res) => {
+  //   const { description, location, dateSubmitted, rev, status, issuedTo, accepted } = req.body;
+  //   const files = req.files ? req.files.map(file => file.originalname) : [];
 
-    const newSubmittal = submittalModel.createSubmittal({
-      description,
-      location,
-      dateSubmitted,
-      rev,
-      status,
-      issuedTo: Array.isArray(issuedTo) ? issuedTo : [issuedTo],
-      accepted,
-      files,
-      comments:[]
-    });
+  //   const newSubmittal = submittalModel.createSubmittal({
+  //     description,
+  //     location,
+  //     dateSubmitted,
+  //     rev,
+  //     status,
+  //     issuedTo: Array.isArray(issuedTo) ? issuedTo : [issuedTo],
+  //     accepted,
+  //     files,
+  //     comments:[]
+  //   });
 
-    res.status(201).json(newSubmittal);
-  };
+  //   res.status(201).json(newSubmittal);
+  // };
 
   updateSubmittal = (req, res) => {
     const { description, location, dateSubmitted, rev, status, issuedTo, accepted } = req.body;
